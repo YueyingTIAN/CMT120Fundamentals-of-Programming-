@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <link rel=stylesheet type=text/css href="{{ url_for('static', filename='style.css') }}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <title>Let's Blog!</title>
+</head>
+
+<body>
+  <div lass="main">
+    <div class="header" id="top_navig_bar">
+      <div class="header_resize">
+        <div class="logo">
+          <h1><span></span></h1>
+        </div>
+        <div class="clr"></div>
+        <div class="menu_nav">
+          <ul>
+            <li><a href="{{ url_for('home') }}" id="home">Home</a></li>
+            {% if not current_user.is_authenticated %}
+            <li><a href="{{ url_for('login') }}" id="login">Login</a></li>
+            <li><a href="{{ url_for('register') }}" id="register">Register</a></li>
+            {% endif %}
+            {% if current_user.is_authenticated %}
+            <li><a href="{{ url_for('logout') }}" id="logout">Logout</a></li>
+            <li><a id="pers_greet">Hello, {{ current_user.username }}!</a></li>
+            {% else %}
+            <li><a id="pers_greet">Hello, Guest!</a></li>
+            {% endif %}
+          </ul>
+        </div>
+        <div class="clr"></div>
+      </div>
+    </div>
+
+    <div>
+      {% with messages = get_flashed_messages() %}
+      {% if messages %}
+      <ul class=flashes>
+        {% for message in messages %}
+        <h1>{{ message }}</h1>
+        {% endfor %}
+      </ul>
+      {% endif %}
+      {% endwith %}
+    </div>
+
+    <div class="content">
+      <div class="content_resize">
+        <div class="content_resize2">
+          <div class="mainbar">
+            {% block content %}
+            {% endblock %}
+          </div>
+
+          <div class="sidebar">
+            <div class="gadget">
+              <h2 class="star"><span>Links </span></h2>
+              <div class="clr"></div>
+              <ul class="sb_menu">
+                <li><i class="fa fa-linkedin-square" style="font-size:22px"></i> <a style="font-size:22px"
+                    href="https://www.linkedin.com/in/yueying-tian-59009615a">LinkedIn</a></li>
+                <li><i class="fa fa-twitter-square" style="font-size:22px"></i> <a style="font-size:22px"
+                    href="https://twitter.com/TianYueying">Twitter</a></li>
+                <li><i class="fa fa-facebook-square" style="font-size:22px"></i> <a style="font-size:22px"
+                    href="https://www.facebook.com/people/Yueying-Tian/100053974283129/">Facebook</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="clr"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer" id="footer">
+      <div class="footer_resize">
+        <p class="lf">&copy; <a href="#">Yueying Tian</a>,
+          <a href="https://www.cardiff.ac.uk/computer-science">School of Computer Science and Informatics</a>,
+          <a href="https://www.cardiff.ac.uk">Cardiff University</a>
+        </p>
+        <ul class="fmenu">
+          <li><a href="{{ url_for('privacy') }}">Privacy Policy & Disclaimer</a></li>
+          <li class="active"><a href="{{ url_for('term') }}">Terms of Use</a></li>
+          <li><a href="{{ url_for('contact') }}">Contact Us</a></li>
+        </ul>
+        <div class="clr"></div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

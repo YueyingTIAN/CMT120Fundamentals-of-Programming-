@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="article">
+  <form method="POST" action="">
+    {{ form.csrf_token }}
+    <p><div class="property">{{ form.username.label }}:</div><div class="value" id="first_name_new">{{ form.username(style='width: 200px; height: 20px;') }}</div></p> 
+    <p><div class="property">{{ form.email.label }}:</div><div class="value" id="email_new">{{ form.email(style='width: 200px; height: 20px;') }}</div></p>
+    <p><div class="property">{{ form.password.label }}:</div><div class="value" id="password_new">{{ form.password(style='width: 200px; height: 20px;') }}</div></p>
+    <p><div class="property">{{ form.confirm_password.label }}:</div><div class="value" id="password_confirm">{{ form.confirm_password(style='width: 200px; height: 20px;') }}</div></p>
+    <p><div class="property"></div><div class="value"><input type="submit" value="Register"></div></p>
+  </form>
+
+  {% for error in form.username.errors %}
+  <p class="error_msg">{{ error }}</p>
+  {% endfor %}
+
+  {% for error in form.email.errors %}
+  <p style="color: red; font-size: 18px; text-align:center;">{{ error }}</p>
+  {% endfor %}
+
+  {% for error in form.password.errors %}
+  <p style="color: red; font-size: 18px; text-align:center;">{{ error }}</p>
+  {% endfor %}
+
+</div>
+{% endblock content %}

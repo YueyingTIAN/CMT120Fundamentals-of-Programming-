@@ -1,0 +1,11 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="article">
+  <form method="POST" action="">
+    {{ form.csrf_token }}
+    <p><div class="property">{{ form.username.label }}:</div><div class="value" id="username">{{ form.username(style='width: 200px; height: 20px;') }}</div></p> 
+    <p><div class="property">{{ form.password.label }}:</div><div class="value" id="password">{{ form.password(style='width: 200px; height: 20px;') }}</div></p>
+    <p><div class="property"></div><div class="value"><input type="submit" value="Login"></div></p>
+  </form>
+</div>
+{% endblock content %}

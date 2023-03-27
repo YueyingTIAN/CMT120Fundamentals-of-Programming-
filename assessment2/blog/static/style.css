@@ -1,0 +1,369 @@
+
+body { 
+  margin:0; 
+  padding:0; 
+  width:100%; 
+  color:#787460; 
+  font:normal 12px/1.8em Arial, Helvetica, sans-serif; 
+  background:url(../static/img/main_bg.jpg) repeat center center;
+}
+
+html, .main { 
+  padding:0; 
+  margin:0;
+}
+
+.clr { 
+  clear:both; 
+  padding:0; 
+  margin:0; 
+  width:100%; 
+  font-size:0px; 
+  line-height:0px;
+}
+
+.logo { 
+  padding:23px 0; 
+  float:left; 
+  width:auto;
+}
+
+h1 {
+  text-align: center;
+}
+
+h1 span { 
+  padding:0 6px 1px 3px; 
+  color:#595959; 
+  font-weight:normal;
+  color:#fff;
+}
+
+h2 { 
+  font:normal 24px/1.5em Arial, Helvetica, sans-serif; 
+  padding:8px 0; 
+  margin:8px 0; 
+  color:#323a3f;
+}
+
+p { 
+  margin:8px 0; 
+  padding:0 0 8px 0; 
+  font:normal 12px/1.8em Arial, Helvetica, sans-serif;
+}
+
+a { 
+  color:#719794; 
+  text-decoration:underline;
+}
+
+.header, .content, .menu_nav, 
+.footer, form, ol, ol li, 
+ul, .content .mainbar, 
+.content .sidebar { 
+  margin:0; 
+  padding:0;
+}
+
+/* header */
+.header { 
+  background:url(../static/img/header_bg.jpg) repeat-x center 101px; 
+  height:200px;
+}
+
+.header_resize { 
+  margin:0 auto; 
+  padding:0; 
+  width:974px; 
+  height:200px; 
+}
+
+/* menu */
+.menu_nav { 
+  float:left; 
+  margin:0; 
+  padding:0 0 20px 40px; 
+  height:79px; 
+}
+
+.menu_nav ul { 
+  list-style:none;
+}
+
+.menu_nav ul li { 
+  margin:0 8px 0 0; 
+  padding:0; 
+  float:left;
+}
+
+.menu_nav ul li a { 
+  display:block; 
+  margin:0; 
+  padding:17px 24px; 
+  color:#787460; 
+  text-decoration:none; 
+  font-size:13px;
+}
+
+.menu_nav ul li.active a, 
+.menu_nav ul li a:hover { 
+  background-color:#64624b; 
+  color:#fefdfd;
+}
+
+/* content */
+.content { 
+  padding-bottom:40px;
+}
+
+.content_resize { 
+  margin:0 auto; 
+  padding:7px; 
+  width:956px; 
+  background-color:#ddd5ba; 
+  border:1px solid #bcb99c;
+}
+
+.content_resize2 { 
+  padding:8px 0 24px; 
+  background:url(../static/img/content_bg.jpg) repeat-y center center; 
+  border:1px solid #bcb99c;
+}
+
+.content .mainbar { 
+  margin:0; 
+  padding:0; 
+  float:left; 
+  width:654px;
+}
+
+.content .mainbar img { 
+  padding:7px; 
+  background-color:#ddd5ba; 
+  border:1px solid #bcb99c;
+}
+
+.content .mainbar .article { 
+  margin:0; 
+  padding:8px 24px 8px 16px;
+}
+
+.content .sidebar { 
+  padding:0; 
+  float:right; 
+  width:300px;
+}
+
+.content .sidebar .gadget { 
+  margin:0; 
+  padding:8px 16px 8px 40px;
+}
+
+ul.sb_menu, ul.ex_menu { 
+  margin:0; 
+  padding:0; 
+  list-style:none; 
+  color:#787460;
+}
+
+ul.sb_menu li, ul.ex_menu li { 
+  margin:0;
+}
+
+ul.sb_menu li { 
+  padding:4px 0; 
+  width:220px;
+}
+
+ul.ex_menu li { 
+  padding:4px 0;
+}
+
+ul.sb_menu li a, 
+ul.ex_menu li a { 
+  color:#787460; 
+  text-decoration:none; 
+  margin-left:-12px; 
+  padding-left:12px;
+}
+
+ul.sb_menu li a:hover, 
+ul.ex_menu li a:hover { 
+  color:#719794; 
+  font-weight:bold;
+}
+
+ul.sb_menu li a:hover { 
+  text-decoration:underline;
+}
+
+ul.ex_menu li a:hover { 
+  text-decoration:none;
+}
+
+/* Alignment for components in register and login pages */
+.article .property{ 
+  width: 20%; 
+  display:inline-block; 
+  box-sizing:border-box; 
+  text-align:right;
+}
+
+.article .value{ 
+  text-align:left; 
+  padding-left:10px; 
+  display:inline-block; 
+  box-sizing:border-box;
+}
+
+
+/* flash error message */
+.article .error_msg{
+  color: red; 
+  font-size: 18px; 
+  text-align:center;
+}
+
+/* subpages */
+.content .mainbar .comment { 
+  margin:0; 
+  padding:16px 0 0 0;
+}
+
+.content .mainbar .comment img.userpic { 
+  border:1px solid #dedede; 
+  margin:10px 16px 0 0; 
+  padding:0; 
+  float:left;
+}
+
+/* footer */
+.footer { }
+
+.footer_resize { 
+  margin:0 auto; 
+  padding:26px; 
+  width:922px; 
+}
+
+.footer p.lf { 
+  margin:0; 
+  padding:4px 0; 
+  float:left; 
+  width:auto; 
+  line-height:1.5em;
+}
+
+.footer p.lf a { 
+  color:#719794;
+}
+
+ul.fmenu { 
+  margin:0; 
+  padding:2px 0; 
+  list-style:none; 
+  float:right; 
+  width:auto;
+}
+
+ul.fmenu li { 
+  margin:0; 
+  padding:0 8px 0 0; 
+  float:left;
+}
+
+ul.fmenu li a { 
+  color:#787460; 
+  text-decoration:none; 
+  padding:6px 16px;
+}
+
+ul.fmenu li a:hover, 
+ul.fmenu li.active a { 
+  color:#719794;
+}
+
+ul.fmenu li a:hover { 
+  text-decoration:underline;
+}
+
+/* form */
+ol { 
+  list-style:none;
+}
+
+ol li { 
+  display:block; 
+  clear:both;
+}
+
+ol li label { 
+  display:block; 
+  margin:0; 
+  padding:16px 0 0 0;
+}
+
+ol li input.text { 
+  width:480px; 
+  border:1px solid #c0c0c0; 
+  margin:2px 0; 
+  padding:5px 2px; 
+  height:16px; 
+  background:#fff;
+}
+
+/* blog post list in home page */
+.blog_post {
+  width: 500px;
+}
+
+.blog_post li {
+  color: black; 
+  display: block; 
+  padding: 12px; 
+  text-decoration: none; 
+  margin: 5px;
+}
+
+.blog_post li:hover {
+  background-color: rgb(180, 179, 165); 
+  opacity: 0.5;
+}
+
+/* rating star effect in post page */
+/* The star effect is inspired from https://codepen.io/recodenow/pen/YZqgZW */
+.rating {
+  margin-bottom: 20px; 
+  border: none; 
+  float: left;
+}
+
+.rating > label {
+  color: #90A0A3; 
+  float: right;
+}
+
+.rating > label:before {
+  margin: 5px; 
+  font-size: 2em; 
+  font-family: FontAwesome;
+  content: "\f005"; 
+  display: inline-block;
+}
+
+.rating > input {
+  display: none;
+}
+
+.rating > input:checked ~ label,
+.rating:not(:checked) > label:hover,
+.rating:not(:checked) > label:hover ~ label {
+  color: #F79426;
+}
+
+.rating > input:checked + label:hover,
+.rating > input:checked ~ label:hover,
+.rating > label:hover ~ input:checked ~ label,
+.rating > input:checked ~ label:hover ~ label {
+  color: #FECE31;
+}

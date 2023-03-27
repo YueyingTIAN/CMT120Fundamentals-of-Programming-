@@ -1,0 +1,67 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<div class="article">
+    <h2 class="post_title">{{ post.title }} &nbsp</h2>
+    <div class="clr"></div>
+    <p>Posted by <a href="#">{{ post.user.username }}</a> </p>
+    <img src="{{ url_for('static', filename='img/' + post.image_file) }}" width="500">
+    <p class="detailed_description" style="white-space: pre-wrap">{{ post.content }}</p>
+    <p><a href="#"><strong>Comments ({{ num_comments }})</strong></a> <span>&nbsp;&bull;&nbsp;</span> {{ post.date }}
+    </p>
+</div>
+<div class="article">
+    <h2><span>{{ num_comments }}</span> Comments</h2>
+    <div class="clr"></div>
+    {% for comment in comments %}
+    <div class="comment">
+        <a href="#"><img src="../static/img/userpic.gif" width="40" height="40" alt="user" class="userpic" /></a>
+        <p><a href="#">{{ comment.user.username }}</a> says:<br />{{ comment.date.strftime('%B %d %Y - %H:%M:%S') }}</p>
+        <p>{{ comment.title }}</p>
+        <p class="comment_text" style="white-space: pre-wrap">{{ comment.content }}</p>
+        <p class="post_rating">Rating: {{ comment.rating }}/5</p>
+    </div>
+    {% endfor %}
+</div>
+<div class="article">
+    <h2><span>Leave a</span> Reply</h2>
+    <div class="clr"></div>
+    <form action="#" method="post" id="leavereply">
+        {{ form.csrf_token }}
+        <ol>
+            <li>
+                <label for="title">{{ form.title.label }}</label>
+                {{ form.title(style='width: 480px; height: 25px;') }}
+            </li>
+            <li>
+                <label for="comment">{{ form.content.label }}</label>
+                {{ form.content(style='width: 480px; height: 120px;') }}
+            </li>
+            <li>
+                <div class="rating">
+                    <input type="radio" id="star5" name="rating" value="5" />
+                    <label class="star" for="star5" title="Awesome" aria-hidden="true"></label>
+                    <input type="radio" id="star4" name="rating" value="4" />
+                    <label class="star" for="star4" title="Great" aria-hidden="true"></label>
+                    <input type="radio" id="star3" name="rating" value="3" />
+                    <label class="star" for="star3" title="Very good" aria-hidden="true"></label>
+                    <input type="radio" id="star2" name="rating" value="2" />
+                    <label class="star" for="star2" title="Good" aria-hidden="true"></label>
+                    <input type="radio" id="star1" name="rating" value="1" />
+                    <label class="star" for="star1" title="Bad" aria-hidden="true"></label>
+                </div>
+                {{ form.rating }}
+            </li>
+            <li>
+                {{ form.submit }}
+                <div class="clr"></div>
+            </li>
+        </ol>
+    </form>
+</div>
+
+{% for error in form.rating.errors %}
+<p class="error_msg">{{ error }}</p>
+{% endfor %}
+
+{% endblock content %}
